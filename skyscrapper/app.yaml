@@ -1,0 +1,9 @@
+runtime: python39  # Especifica la versión de Python que quieres usar
+#entrypoint: gunicorn -b :$PORT app:app
+
+handlers:
+  - url: /static  # Configura la ruta para los archivos estáticos (CSS, JavaScript, imágenes, etc.)
+    static_dir: static
+
+  - url: /.*
+    script: auto  # Usa 'auto' para que App Engine detecte automáticamente tu aplicación
